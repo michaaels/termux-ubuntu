@@ -10,7 +10,7 @@ sudo apt install keyboard-configuration -y
 sudo apt install xfe lxde-common lxde-core lxde-icon-theme lxappearance lxlock lxmenu-data \
   lxpanel lxpanel-data lxrandr lxsession lxsession-data lxsession-default-apps lxsession-logout \
   lxtask lxterminal lxhotkey-core lxhotkey-data lxshortcut obconf gtk2-engines \
-  tigervnc-standalone-server tigervnc-common dbus-x11 --no-install-recommends net-tools -y
+  tigervnc-standalone-server tigervnc-common dbus-x11 --no-install-recommends -y
 sudo apt clean
 mv /usr/bin/lxpolkit /usr/bin/lxpolkit.bak
 
