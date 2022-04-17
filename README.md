@@ -105,7 +105,7 @@ sudo groupadd --gid 50305 permagrp6
 
 ### OR USE
 ```
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/vscode.sh | | bash -s
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/vscode.sh | bash
 ```
 ### Install LibreOffice
 
