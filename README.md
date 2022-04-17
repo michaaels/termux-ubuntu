@@ -2,8 +2,9 @@
 
 This installs Ubuntu 20 with xfce4 desktop on Termux. All scripts are from Andronix, I just compose and edit them to make the installer easier and smoother. It includes:
 
-- [x] Ubuntu 20
+- [x] Ubuntu 22.04
 - [x] XFCE4 Desktop
+- [ ] LXDE Desktop
 - [x] TigerVNC Server
 - [x] Non-root Account Creation
 - [x] Audio Support
@@ -16,19 +17,19 @@ Copy and paste this command to Termux:
 ### Ubuntu 20 With XFCE4
 
 ```bash
-pkg install wget curl proot tar -y && wget https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh && chmod +x ubuntu.sh && bash ubuntu.sh
+curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s arg1 arg2
 ```
 
 ### Ubuntu 20 CLI Only
 
 ```bash
-pkg install wget curl proot tar -y && wget https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh && chmod +x ubuntu.sh && bash ubuntu.sh nde
+curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s nde
 ```
 
 ### Ubuntu 20 With LXDE
 
 ```bash
-pkg install wget curl proot tar -y && wget https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh && chmod +x ubuntu.sh && bash ubuntu.sh lxde
+curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s lxde
 ```
 
 ## Run
@@ -38,7 +39,7 @@ pkg install wget curl proot tar -y && wget https://raw.githubusercontent.com/tua
 After installation, on Termux, you can execute this command to run ubuntu:
 
 ```bash
-./start-ubuntu20.sh
+./start-ubuntu.sh
 ```
 
 ### Exit Ubuntu
