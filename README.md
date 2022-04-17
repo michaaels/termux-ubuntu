@@ -14,19 +14,19 @@ This installs Ubuntu 20 with xfce4 desktop on Termux. All scripts are from Andro
 
 Copy and paste this command to Termux:
 
-### Ubuntu 20 With XFCE4
+### Ubuntu With XFCE4
 
 ```bash
 curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s arg1 arg2
 ```
 
-### Ubuntu 20 CLI Only
+### Ubuntu CLI Only
 
 ```bash
 curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s nde
 ```
 
-### Ubuntu 20 With LXDE
+### Ubuntu With LXDE
 
 ```bash
 curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s lxde
