@@ -1,8 +1,11 @@
 #!/bin/bash
 
+repo_user="michaaels"
+repo_name="termux-ubuntu-17-04-22"
+
 #Get the necessar components
 sudo apt install udisks2 -y
-echo "" > /var/lib/dpkg/info/udisks2.postinst
+echo "" >/var/lib/dpkg/info/udisks2.postinst
 sudo dpkg --configure -a
 sudo apt-mark hold udisks2
 [ ! -f /root/.parrot ] && sudo apt update || echo "Parrot detected, not updating apt cache since that will break the whole distro"
@@ -25,13 +28,13 @@ export XAUTHORITY
 LANG=en_US.UTF-8
 export LANG
 echo $$ > /tmp/xsession.pid
-dbus-launch --exit-with-session startlxde &' > ~/.vnc/xstartup
+dbus-launch --exit-with-session startlxde &' >~/.vnc/xstartup
 chmod +x ~/.vnc/xstartup
 
 echo " "
 
 echo "Running browser patch"
-wget https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubchromiumfix.sh && chmod +x ubchromiumfix.sh
+wget https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/ubchromiumfix.sh && chmod +x ubchromiumfix.sh
 sudo ./ubchromiumfix.sh && rm -rf ubchromiumfix.sh
 
 echo "You can now start vncserver by running vncserver-start"
@@ -55,10 +58,10 @@ echo " "
 echo " "
 echo " "
 
-echo "export DISPLAY=":1"" >> /etc/profile
+echo "export DISPLAY=":1"" >>/etc/profile
 source /etc/profile
 
 vncpasswd
-wget -q https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/.profile -O $HOME/.profile.1 > /dev/null
-cat $HOME/.profile.1 >> $HOME/.profile && rm -rf $HOME/.profile.1
+wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/.profile -O $HOME/.profile.1 >/dev/null
+cat $HOME/.profile.1 >>$HOME/.profile && rm -rf $HOME/.profile.1
 source ~/.profile

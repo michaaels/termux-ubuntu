@@ -17,19 +17,19 @@ Copy and paste this command to Termux:
 ### Ubuntu With XFCE4
 
 ```bash
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/ubuntu.sh | | bash -s
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | | bash -s
 ```
 
 ### Ubuntu CLI Only
 
 ```bash
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/ubuntu.sh | | bash -s nde
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | | bash -s nde
 ```
 
 ### Ubuntu With LXDE
 
 ```bash
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/ubuntu.sh | | bash -s lxde
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | | bash -s lxde
 ```
 
 ## Run
@@ -51,6 +51,7 @@ exit
 ```
 
 ### Start VNC Server
+
 - Problem with Auth reinstall sudo apt reinstall tigervnc-standalone-server tigervnc-xorg-extension -y
 - problem with vncstart, change /home/${USER}/.vnc/xstartup
 - #dbus-launch --exit-with-session startlxde &
@@ -105,15 +106,17 @@ sudo groupadd --gid 50305 permagrp6
 - If VSCode does not run, try install older version. E.g. https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable
 
 ### OR USE
+
 ```
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/vscode.sh | bash
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22-17-04-22/master/vscode.sh | bash
 ```
+
 ### Install LibreOffice
 
 On Ubuntu, run this command to install LibreOffice with patch
 
 ```
-wget https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/librepatch.sh && chmod +x librepatch.sh && bash librepatch.sh
+wget https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22-17-04-22}/master/librepatch.sh && chmod +x librepatch.sh && bash librepatch.sh
 ```
 
 ### Install FireFox
