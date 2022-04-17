@@ -51,6 +51,7 @@ exit
 ```
 
 ### Start VNC Server
+- Problem with Auth reinstall sudo apt reinstall tigervnc-standalone-server tigervnc-xorg-extension -y
 - problem with vncstart, change /home/${USER}/.vnc/xstartup
 - #dbus-launch --exit-with-session startlxde &
 - dbus-launch --sh-syntax --exit-with-session startlxde
