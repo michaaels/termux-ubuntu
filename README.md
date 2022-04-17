@@ -1,4 +1,4 @@
-# Install Ubuntu20 on Termux Android
+# Install Ubuntu22.04 on Termux Android
 
 This installs Ubuntu 20 with xfce4 desktop on Termux. All scripts are from Andronix, I just compose and edit them to make the installer easier and smoother. It includes:
 
