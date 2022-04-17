@@ -17,19 +17,19 @@ Copy and paste this command to Termux:
 ### Ubuntu With XFCE4
 
 ```bash
-curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/ubuntu.sh | | bash -s
 ```
 
 ### Ubuntu CLI Only
 
 ```bash
-curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s nde
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/ubuntu.sh | | bash -s nde
 ```
 
 ### Ubuntu With LXDE
 
 ```bash
-curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s lxde
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/ubuntu.sh | | bash -s lxde
 ```
 
 ## Run
@@ -99,11 +99,8 @@ sudo groupadd --gid 50305 permagrp6
 - VSCode ARM is now officially supported by Microsoft. You can download it here: https://code.visualstudio.com/download
 
 - If VSCode does not run, try install older version. E.g. https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable
-- OR USE APT
-- sudo apt install software-properties-common apt-transport-https wget
-- wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-- sudo add-apt-repository "deb [arch=arm64] https://packages.microsoft.com/repos/vscode stable main"
-- sudo apt install code
+- OR
+- curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/vscode.sh | | bash -s
 
 ### Install LibreOffice
 
