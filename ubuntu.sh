@@ -1,4 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
+repo_name="termux-ubuntu-17-04-22"
 pkg install wget curl proot tar -y
 wget "https://andronixos.sfo2.cdn.digitaloceanspaces.com/OS-Files/setup-audio.sh" && chmod +x setup-audio.sh && ./setup-audio.sh
 
@@ -241,23 +242,23 @@ rm -rf ubuntu-fs/usr/local/bin/*
 
 echo "127.0.0.1 localhost" >$folder/etc/hosts
 echo "Set disable_coredump false" >$folder/etc/sudo.conf
-wget -q https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/.bash_profile -O ubuntu-fs/root/.bash_profile >/dev/null
-wget -q https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/vnc -P ubuntu-fs/usr/local/bin >/dev/null
-wget -q https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/vncpasswd -P ubuntu-fs/usr/local/bin >/dev/null
-wget -q https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/vncserver-stop -P ubuntu-fs/usr/local/bin >/dev/null
-wget -q https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/vncserver-start -P ubuntu-fs/usr/local/bin >/dev/null
+wget -q https://raw.githubusercontent.com/michaaels/termux-ubuntu-${repo_name}/master/.bash_profile -O ubuntu-fs/root/.bash_profile >/dev/null
+wget -q https://raw.githubusercontent.com/michaaels/termux-ubuntu-${repo_name}/master/vnc -P ubuntu-fs/usr/local/bin >/dev/null
+wget -q https://raw.githubusercontent.com/michaaels/termux-ubuntu-${repo_name}/master/vncpasswd -P ubuntu-fs/usr/local/bin >/dev/null
+wget -q https://raw.githubusercontent.com/michaaels/termux-ubuntu-${repo_name}/master/vncserver-stop -P ubuntu-fs/usr/local/bin >/dev/null
+wget -q https://raw.githubusercontent.com/michaaels/termux-ubuntu-${repo_name}/master/vncserver-start -P ubuntu-fs/usr/local/bin >/dev/null
 
-wget -q https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/firstrun -P ubuntu-fs/usr/share/andronix >/dev/null
+wget -q https://raw.githubusercontent.com/michaaels/termux-ubuntu-${repo_name}/master/firstrun -P ubuntu-fs/usr/share/andronix >/dev/null
 
 mkdir -p ubuntu-fs/usr/share/andronix
 case "$1" in
 "nde") ;;
 
 "lxde")
-	wget -q https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/de-lxde -O ubuntu-fs/usr/share/andronix/de-install >/dev/null
+	wget -q https://raw.githubusercontent.com/michaaels/termux-ubuntu-${repo_name}/master/de-lxde -O ubuntu-fs/usr/share/andronix/de-install >/dev/null
 	;;
 *)
-	wget -q https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/de-xfce -O ubuntu-fs/usr/share/andronix/de-install >/dev/null
+	wget -q https://raw.githubusercontent.com/michaaels/termux-ubuntu-${repo_name}/master/de-xfce -O ubuntu-fs/usr/share/andronix/de-install >/dev/null
 	;;
 esac
 
