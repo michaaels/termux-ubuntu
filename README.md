@@ -99,9 +99,10 @@ sudo groupadd --gid 50305 permagrp6
 - VSCode ARM is now officially supported by Microsoft. You can download it here: https://code.visualstudio.com/download
 
 - If VSCode does not run, try install older version. E.g. https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable
-- OR
-- curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/vscode.sh | | bash -s
-
+OR
+```
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/vscode.sh | | bash -s
+```
 ### Install LibreOffice
 
 On Ubuntu, run this command to install LibreOffice with patch
