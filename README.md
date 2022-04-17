@@ -100,7 +100,7 @@ sudo groupadd --gid 50305 permagrp6
 
 - If VSCode does not run, try install older version. E.g. https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable
 
-### OR
+### OR USE
 ```
 curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu/master/vscode.sh | | bash -s
 ```
