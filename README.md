@@ -17,7 +17,7 @@ Copy and paste this command to Termux:
 ### Ubuntu With XFCE4
 
 ```bash
-curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s arg1 arg2
+curl -s https://raw.githubusercontent.com/tuanpham-dev/termux-ubuntu/master/ubuntu.sh | | bash -s
 ```
 
 ### Ubuntu CLI Only
