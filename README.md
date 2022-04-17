@@ -51,8 +51,8 @@ exit
 ```
 
 ### Start VNC Server
-problem with vncstart, change /home/${USER}/.vnc/xstartup
-dbus-launch --sh-syntax --exit-with-session startlxde
+-problem with vncstart, change /home/${USER}/.vnc/xstartup
+-dbus-launch --sh-syntax --exit-with-session startlxde
 
 On Ubuntu, run this command to start VNC Server:
 
