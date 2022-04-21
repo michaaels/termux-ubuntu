@@ -1,6 +1,6 @@
 # Install Ubuntu22.04 on Termux Android
 
-This installs Ubuntu 20 with xfce4 desktop on Termux. All scripts are from Andronix, I just compose and edit them to make the installer easier and smoother. It includes:
+This installs Ubuntu with xfce4 desktop on Termux. All scripts are from Andronix, I just compose and edit them to make the installer easier and smoother. It includes:
 
 - [x] Ubuntu 22.04
 - [x] XFCE4 Desktop
@@ -17,19 +17,19 @@ Copy and paste this command to Termux:
 ### Ubuntu With XFCE4
 
 ```bash
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | | bash -s
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | bash
 ```
 
 ### Ubuntu CLI Only
 
 ```bash
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | | bash -s nde
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | bash nde
 ```
 
 ### Ubuntu With LXDE
 
 ```bash
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | | bash -s lxde
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | bash lxde
 ```
 
 ## Run
@@ -101,14 +101,14 @@ sudo groupadd --gid 50305 permagrp6
 
 ### Install VS Code
 
+- Execute with code --no-sandbox
 - VSCode ARM is now officially supported by Microsoft. You can download it here: https://code.visualstudio.com/download
-
 - If VSCode does not run, try install older version. E.g. https://update.code.visualstudio.com/1.50.1/linux-deb-arm64/stable
 
-### OR USE
+### OR
 
 ```
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22-17-04-22/master/vscode.sh | bash
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/vscode.sh | bash
 ```
 
 ### Install LibreOffice
@@ -116,7 +116,7 @@ curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22-17-04
 On Ubuntu, run this command to install LibreOffice with patch
 
 ```
-wget https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22-17-04-22}/master/librepatch.sh && chmod +x librepatch.sh && bash librepatch.sh
+curl -s  https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/librepatch.sh | bash
 ```
 
 ### Install FireFox
@@ -124,7 +124,9 @@ wget https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22-17-04-22
 On Ubuntu, run this command to install FireFox
 
 ```
-sudo apt install firefox
+sudo add-apt-repository ppa:mozillateam/ppa
+sudo apt install -t 'o=LP-PPA-mozillateam' firefox #sudo apt install firefox-esr
+#Open firefox error -> Fix https://github.com/termux/proot/issues/139#issuecomment-751988264
 ```
 
 Follow this url to fix firefox crash https://github.com/termux/proot/issues/139#issuecomment-751988264

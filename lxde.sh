@@ -13,7 +13,16 @@ sudo apt install keyboard-configuration -y
 sudo apt install xfe lxde-common lxde-core lxde-icon-theme lxappearance lxlock lxmenu-data \
   lxpanel lxpanel-data lxrandr lxsession lxsession-data lxsession-default-apps lxsession-logout \
   lxtask lxterminal lxhotkey-core lxhotkey-data lxshortcut obconf gtk2-engines \
-  tigervnc-standalone-server tigervnc-xorg-extension tigervnc-common unzip vim net-tools neofetch dbus-x11 --no-install-recommends -y
+  dbus-x11 libsecret-1-0 --no-install-recommends -y
+sudo apt install curl wget unzip vim net-tools tigervnc-standalone-server tigervnc-xorg-extension -y
+
+#Get Additional apps
+sudo add-apt-repository ppa:mozillateam/ppa && sudo apt install -t 'o=LP-PPA-mozillateam' firefox -y
+sudo apt install openjdk-17-jdk nodejs npm -y
+
+curl -fL https://github.com/coursier/launchers/raw/master/cs-aarch64-pc-linux.gz | gzip -d >cs && chmod +x cs && ./cs setup
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/vscode.sh | bash
+
 sudo apt clean
 mv /usr/bin/lxpolkit /usr/bin/lxpolkit.bak
 

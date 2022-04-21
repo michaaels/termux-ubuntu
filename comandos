@@ -1,0 +1,24 @@
+27 sudo apt-get install xinit
+28
+31 startx
+32 startlxde
+33 echo "" >>$HOME/.bashrc && echo "export XAUTHORITY=$HOME/.Xauthority" >>$HOME/.bashrc && cd $HOME && . .bashrc
+34
+
+149 sudo add-apt-repository ppa:mozillateam/ppa && sudo apt install -t 'o=LP-PPA-mozillateam' firefox -y
+
+81 sudo apt install net-tools tigervnc-standalone-server tigervnc-xorg-extension -y
+83 vncpasswd
+84
+119
+120
+138 sudo apt install openjdk-17-jdk nodejs npm
+228
+230
+231
+265 curl -fL https://github.com/coursier/launchers/raw/master/cs-aarch64-pc-linux.gz | gzip -d >cs
+266 chmod +x cs
+267 ./cs setup
+268 scala
+
+sudo apt-get install -y libsecret-1-0 #no se cual es el uso
