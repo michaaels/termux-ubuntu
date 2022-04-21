@@ -18,7 +18,7 @@ sudo apt install curl wget unzip vim net-tools tigervnc-standalone-server tigerv
 
 #Get Additional apps
 #sudo add-apt-repository ppa:mozillateam/ppa && sudo apt install -t 'o=LP-PPA-mozillateam' firefox -y
-#sudo apt install openjdk-17-jdk nodejs npm -y
+sudo apt install openjdk-17-jdk nodejs npm -y
 
 #curl -fL https://github.com/coursier/launchers/raw/master/cs-aarch64-pc-linux.gz | gzip -d >cs && chmod +x cs && ./cs setup
 #curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/vscode.sh | bash
