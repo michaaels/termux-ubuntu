@@ -23,13 +23,13 @@ curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/maste
 ### Ubuntu CLI Only
 
 ```bash
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | bash nde
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | bash -s nde
 ```
 
 ### Ubuntu With LXDE
 
 ```bash
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | bash lxde
+curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/ubuntu.sh | bash -s lxde
 ```
 
 ## Run
