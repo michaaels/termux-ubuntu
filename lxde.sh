@@ -17,11 +17,11 @@ sudo apt install xfe lxde-common lxde-core lxde-icon-theme lxappearance lxlock l
 sudo apt install curl wget unzip vim net-tools tigervnc-standalone-server tigervnc-xorg-extension -y
 
 #Get Additional apps
-sudo add-apt-repository ppa:mozillateam/ppa && sudo apt install -t 'o=LP-PPA-mozillateam' firefox -y
-sudo apt install openjdk-17-jdk nodejs npm -y
+#sudo add-apt-repository ppa:mozillateam/ppa && sudo apt install -t 'o=LP-PPA-mozillateam' firefox -y
+#sudo apt install openjdk-17-jdk nodejs npm -y
 
-curl -fL https://github.com/coursier/launchers/raw/master/cs-aarch64-pc-linux.gz | gzip -d >cs && chmod +x cs && ./cs setup
-curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/vscode.sh | bash
+#curl -fL https://github.com/coursier/launchers/raw/master/cs-aarch64-pc-linux.gz | gzip -d >cs && chmod +x cs && ./cs setup
+#curl -s https://raw.githubusercontent.com/michaaels/termux-ubuntu-17-04-22/master/vscode.sh | bash
 
 sudo apt clean
 mv /usr/bin/lxpolkit /usr/bin/lxpolkit.bak
