@@ -1,8 +1,5 @@
 #!/bin/bash
 
-repo_user="michaaels"
-repo_name="termux-ubuntu-17-04-22"
-
 sudo apt install libreoffice --no-install-recommends -y
 rm -rf /usr/lib/libreoffice/program/oosplash
 wget https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/oosplash?raw=true -q -O /usr/lib/libreoffice/program/oosplash

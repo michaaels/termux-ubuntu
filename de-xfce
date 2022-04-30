@@ -1,8 +1,5 @@
 #!/bin/bash
 
-repo_user="michaaels"
-repo_name="termux-ubuntu-17-04-22"
-
 echo "#!/bin/bash
 rm -rf /etc/resolv.conf
 echo 'nameserver 8.8.8.8' >> /etc/resolv.conf
@@ -10,5 +7,5 @@ wget https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/xfce.sh 
 chmod +x ~/xfce.sh
 bash ~/xfce.sh
 rm -rf ~/xfce.sh
-rm -rf ~/.bash_profile" >"/home/$1/.bash_profile"
+rm -rf ~/.bash_profile" > "/home/$1/.bash_profile"
 chmod +x "/home/$1/.bash_profile"

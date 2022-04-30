@@ -1,8 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
-repo_user="michaaels"
-repo_name="termux-ubuntu-17-04-22"
-
 pkg install wget curl proot tar -y
 wget "https://andronixos.sfo2.cdn.digitaloceanspaces.com/OS-Files/setup-audio.sh" && chmod +x setup-audio.sh && ./setup-audio.sh
 
@@ -12,14 +9,16 @@ if [ -d "$folder" ]; then
 	first=1
 	echo "skipping downloading"
 fi
+
 tarball="ubuntu.tar.gz"
 distro="jammy"
+
 termux-setup-storage
 
 if [ "$first" != 1 ]; then
 	if [ ! -f $tarball ]; then
 		echo "Download Rootfs, this may take a while base on your internet speed."
-		case $(dpkg --print-architecture) in
+		case `dpkg --print-architecture` in
 		aarch64)
 			archurl="arm64"
 			;;
@@ -41,7 +40,7 @@ if [ "$first" != 1 ]; then
 
 	fi
 
-	cur=$(pwd)
+	cur=`pwd`
 	mkdir -p "$folder"
 	cd "$folder"
 	echo "Decompressing Rootfs, please be patient."
@@ -53,7 +52,7 @@ mkdir -p ubuntu-binds
 mkdir -p ${folder}/proc/fakethings
 
 if [ ! -f "${cur}/${folder}/proc/fakethings/stat" ]; then
-cat <<-EOF >"${cur}/${folder}/proc/fakethings/stat"
+cat <<- EOF > "${cur}/${folder}/proc/fakethings/stat"
 cpu  5502487 1417100 4379831 62829678 354709 539972 363929 0 0 0
 cpu0 611411 171363 667442 7404799 61301 253898 205544 0 0 0
 cpu1 660993 192673 571402 7853047 39647 49434 29179 0 0 0
@@ -75,123 +74,123 @@ EOF
 fi
 
 if [ ! -f "${cur}/${folder}/proc/fakethings/version" ]; then
-	cat <<-EOF >"${cur}/${folder}/proc/fakethings/version"
+	cat <<- EOF > "${cur}/${folder}/proc/fakethings/version"
 		Linux version 5.4.0-faked (andronix@fakeandroid) (gcc version 4.9.x (Andronix fake /proc/version) ) #1 SMP PREEMPT Sun Sep 13 00:00:00 IST 2020
 	EOF
 fi
 
 if [ ! -f "${cur}/${folder}/proc/fakethings/vmstat" ]; then
-cat <<-EOF >"${cur}/${folder}/proc/fakethings/vmstat"
-nr_free_pages 15717
-nr_zone_inactive_anon 87325
-nr_zone_active_anon 259521
-nr_zone_inactive_file 95508
-nr_zone_active_file 57839
-nr_zone_unevictable 58867
-nr_zone_write_pending 0
-nr_mlock 58867
-nr_page_table_pages 24569
-nr_kernel_stack 49552
-nr_bounce 0
-nr_zspages 80896
-nr_free_cma 0
-nr_inactive_anon 87325
-nr_active_anon 259521
-nr_inactive_file 95508
-nr_active_file 57839
-nr_unevictable 58867
-nr_slab_reclaimable 17709
-nr_slab_unreclaimable 47418
-nr_isolated_anon 0
-nr_isolated_file 0
-workingset_refault 33002180
-workingset_activate 5498395
-workingset_restore 2354202
-workingset_nodereclaim 140006
-nr_anon_pages 344014
-nr_mapped 193745
-nr_file_pages 218441
-nr_dirty 0
-nr_writeback 0
-nr_writeback_temp 0
-nr_shmem 1880
-nr_shmem_hugepages 0
-nr_shmem_pmdmapped 0
-nr_anon_transparent_hugepages 0
-nr_unstable 0
-nr_vmscan_write 8904094
-nr_vmscan_immediate_reclaim 139732
-nr_dirtied 8470080
-nr_written 16835370
-nr_indirectly_reclaimable 8273152
-nr_unreclaimable_pages 130861
-nr_dirty_threshold 31217
-nr_dirty_background_threshold 15589
-pgpgin 198399484
-pgpgout 31742368
-pgpgoutclean 45542744
-pswpin 3843200
-pswpout 8903884
-pgalloc_dma 192884869
-pgalloc_normal 190990320
-pgalloc_movable 0
-allocstall_dma 0
-allocstall_normal 3197
-allocstall_movable 1493
-pgskip_dma 0
-pgskip_normal 0
-pgskip_movable 0
-pgfree 384653565
-pgactivate 34249517
-pgdeactivate 44271435
-pglazyfree 192
-pgfault 46133667
-pgmajfault 5568301
-pglazyfreed 0
-pgrefill 55909145
-pgsteal_kswapd 58467386
-pgsteal_direct 255950
-pgscan_kswapd 86628315
-pgscan_direct 415889
-pgscan_direct_throttle 0
-pginodesteal 18
-slabs_scanned 31242197
-kswapd_inodesteal 1238474
-kswapd_low_wmark_hit_quickly 11637
-kswapd_high_wmark_hit_quickly 5411
-pageoutrun 32167
-pgrotated 213328
-drop_pagecache 0
-drop_slab 0
-oom_kill 0
-pgmigrate_success 729722
-pgmigrate_fail 450
-compact_migrate_scanned 43510584
-compact_free_scanned 248175096
-compact_isolated 1494774
-compact_stall 6
-compact_fail 3
-compact_success 3
-compact_daemon_wake 9438
-compact_daemon_migrate_scanned 43502436
-compact_daemon_free_scanned 248107303
-unevictable_pgs_culled 66418
-unevictable_pgs_scanned 0
-unevictable_pgs_rescued 8484
-unevictable_pgs_mlocked 78830
-unevictable_pgs_munlocked 8508
-unevictable_pgs_cleared 11455
-unevictable_pgs_stranded 11455
-swap_ra 0
-swap_ra_hit 7
-speculative_pgfault 221449963
-EOF
+	cat <<- EOF > "${cur}/${folder}/proc/fakethings/vmstat"
+	nr_free_pages 15717
+	nr_zone_inactive_anon 87325
+	nr_zone_active_anon 259521
+	nr_zone_inactive_file 95508
+	nr_zone_active_file 57839
+	nr_zone_unevictable 58867
+	nr_zone_write_pending 0
+	nr_mlock 58867
+	nr_page_table_pages 24569
+	nr_kernel_stack 49552
+	nr_bounce 0
+	nr_zspages 80896
+	nr_free_cma 0
+	nr_inactive_anon 87325
+	nr_active_anon 259521
+	nr_inactive_file 95508
+	nr_active_file 57839
+	nr_unevictable 58867
+	nr_slab_reclaimable 17709
+	nr_slab_unreclaimable 47418
+	nr_isolated_anon 0
+	nr_isolated_file 0
+	workingset_refault 33002180
+	workingset_activate 5498395
+	workingset_restore 2354202
+	workingset_nodereclaim 140006
+	nr_anon_pages 344014
+	nr_mapped 193745
+	nr_file_pages 218441
+	nr_dirty 0
+	nr_writeback 0
+	nr_writeback_temp 0
+	nr_shmem 1880
+	nr_shmem_hugepages 0
+	nr_shmem_pmdmapped 0
+	nr_anon_transparent_hugepages 0
+	nr_unstable 0
+	nr_vmscan_write 8904094
+	nr_vmscan_immediate_reclaim 139732
+	nr_dirtied 8470080
+	nr_written 16835370
+	nr_indirectly_reclaimable 8273152
+	nr_unreclaimable_pages 130861
+	nr_dirty_threshold 31217
+	nr_dirty_background_threshold 15589
+	pgpgin 198399484
+	pgpgout 31742368
+	pgpgoutclean 45542744
+	pswpin 3843200
+	pswpout 8903884
+	pgalloc_dma 192884869
+	pgalloc_normal 190990320
+	pgalloc_movable 0
+	allocstall_dma 0
+	allocstall_normal 3197
+	allocstall_movable 1493
+	pgskip_dma 0
+	pgskip_normal 0
+	pgskip_movable 0
+	pgfree 384653565
+	pgactivate 34249517
+	pgdeactivate 44271435
+	pglazyfree 192
+	pgfault 46133667
+	pgmajfault 5568301
+	pglazyfreed 0
+	pgrefill 55909145
+	pgsteal_kswapd 58467386
+	pgsteal_direct 255950
+	pgscan_kswapd 86628315
+	pgscan_direct 415889
+	pgscan_direct_throttle 0
+	pginodesteal 18
+	slabs_scanned 31242197
+	kswapd_inodesteal 1238474
+	kswapd_low_wmark_hit_quickly 11637
+	kswapd_high_wmark_hit_quickly 5411
+	pageoutrun 32167
+	pgrotated 213328
+	drop_pagecache 0
+	drop_slab 0
+	oom_kill 0
+	pgmigrate_success 729722
+	pgmigrate_fail 450
+	compact_migrate_scanned 43510584
+	compact_free_scanned 248175096
+	compact_isolated 1494774
+	compact_stall 6
+	compact_fail 3
+	compact_success 3
+	compact_daemon_wake 9438
+	compact_daemon_migrate_scanned 43502436
+	compact_daemon_free_scanned 248107303
+	unevictable_pgs_culled 66418
+	unevictable_pgs_scanned 0
+	unevictable_pgs_rescued 8484
+	unevictable_pgs_mlocked 78830
+	unevictable_pgs_munlocked 8508
+	unevictable_pgs_cleared 11455
+	unevictable_pgs_stranded 11455
+	swap_ra 0
+	swap_ra_hit 7
+	speculative_pgfault 221449963
+	EOF
 
 fi
 
 bin=start-ubuntu.sh
 echo "writing launch script"
-cat >$bin <<-EOM
+cat > $bin <<- EOM
 #!/bin/bash
 cd \$(dirname \$0)
 pulseaudio -k >> /dev/null 2>&1
@@ -245,25 +244,25 @@ mkdir -p ubuntu-fs/usr/share/andronix
 mkdir -p ubuntu-fs/var/tmp
 rm -rf ubuntu-fs/usr/local/bin/*
 
-echo "127.0.0.1 localhost" >$folder/etc/hosts
-echo "Set disable_coredump false" >$folder/etc/sudo.conf
-wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/.bash_profile -O ubuntu-fs/root/.bash_profile >/dev/null
-wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/vnc -P ubuntu-fs/usr/local/bin >/dev/null
-wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/vncpasswd -P ubuntu-fs/usr/local/bin >/dev/null
-wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/vncserver-stop -P ubuntu-fs/usr/local/bin >/dev/null
-wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/vncserver-start -P ubuntu-fs/usr/local/bin >/dev/null
+echo "127.0.0.1 localhost" > $folder/etc/hosts
+echo "Set disable_coredump false" > $folder/etc/sudo.conf
+wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/.bash_profile -O ubuntu-fs/root/.bash_profile > /dev/null
+wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/vnc -P ubuntu-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/vncpasswd -P ubuntu-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/stopvnc -P ubuntu-fs/usr/local/bin > /dev/null
+wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/startvnc -P ubuntu-fs/usr/local/bin > /dev/null
 
-wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/firstrun -P ubuntu-fs/usr/share/andronix >/dev/null
+wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/firstrun -P ubuntu-fs/usr/share/andronix > /dev/null
 
 mkdir -p ubuntu-fs/usr/share/andronix
 case "$1" in
 "nde") ;;
 
 "lxde")
-	wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/de-lxde -O ubuntu-fs/usr/share/andronix/de-install >/dev/null
+	wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/de-lxde -O ubuntu-fs/usr/share/andronix/de-install > /dev/null
 	;;
 *)
-	wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/de-xfce -O ubuntu-fs/usr/share/andronix/de-install >/dev/null
+	wget -q https://raw.githubusercontent.com/${repo_user}/${repo_name}/master/de-xfce -O ubuntu-fs/usr/share/andronix/de-install > /dev/null
 	;;
 esac
 
@@ -271,8 +270,8 @@ chmod +x ubuntu-fs/root/.bash_profile
 chmod +x ubuntu-fs/root/.profile
 chmod +x ubuntu-fs/usr/local/bin/vnc
 chmod +x ubuntu-fs/usr/local/bin/vncpasswd
-chmod +x ubuntu-fs/usr/local/bin/vncserver-start
-chmod +x ubuntu-fs/usr/local/bin/vncserver-stop
+chmod +x ubuntu-fs/usr/local/bin/startvnc
+chmod +x ubuntu-fs/usr/local/bin/stopvnc
 
 echo "fixing shebang of $bin"
 termux-fix-shebang $bin

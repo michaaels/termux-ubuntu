@@ -60,7 +60,7 @@ exit
 On Ubuntu, run this command to start VNC Server:
 
 ```bash
-vncserver-start
+startvnc
 ```
 
 Then you can use VNC Client to connect to `127.0.0.1:1` or `127.0.0.1:5901`
@@ -70,7 +70,7 @@ Then you can use VNC Client to connect to `127.0.0.1:1` or `127.0.0.1:5901`
 On Ubuntu, run this command to stop VNC Server:
 
 ```bash
-vncserver-stop
+stopvnc
 ```
 
 ## VNC Client For Android
