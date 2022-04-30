@@ -1,5 +1,10 @@
 #!/data/data/com.termux/files/usr/bin/bash
 
+#Data Repository
+export repo_user="michaaels"
+export repo_name="termux-ubuntu-17-04-22"
+#
+
 pkg install wget curl proot tar -y
 wget "https://andronixos.sfo2.cdn.digitaloceanspaces.com/OS-Files/setup-audio.sh" && chmod +x setup-audio.sh && ./setup-audio.sh
 
