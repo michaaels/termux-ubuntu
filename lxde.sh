@@ -1,5 +1,10 @@
 #!/bin/bash
 
+#Data Repository
+export repo_user="michaaels"
+export repo_name="termux-ubuntu-17-04-22"
+#
+
 #Get the necessar components
 sudo apt install udisks2 -y
 echo "" > /var/lib/dpkg/info/udisks2.postinst
