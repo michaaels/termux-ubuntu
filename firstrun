@@ -53,7 +53,8 @@ create_oem_install() {
   mkdir -p /home/$USER/.vnc
   passwd $(cat $TMPDIR/user) < $TMPDIR/password 1> /dev/null 2>&1
   /usr/local/bin/vncpasswd -f <<<"$PASSWORD"$'\n'"$PASSWORD" > /home/$USER/.vnc/passwd 
-  sed -i "/^root/a $USER ALL=(ALL) ALL" /etc/sudoers
+  #sed -i "/^root/a $USER ALL=(ALL) ALL" /etc/sudoers
+  sudo usermod -aG sudo $USER
   msg "Applying system settings..."
   systemctl disable systemd-resolved.service 1> /dev/null 2>&1
   
